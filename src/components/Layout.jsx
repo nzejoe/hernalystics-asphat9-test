@@ -34,21 +34,21 @@ const Layout = ({ children }) => {
                         <p>© 2022 Hernalytics</p>
                     </div>
                     <div>
-                        <h6 className="mb-6">About</h6>
+                        <h6 className="mb-6 font-bold">About</h6>
                         <p className="mb-6">Our Story</p>
                         <p className="mb-6">Blog</p>
                         <p className="mb-6">About Hernalytics</p>
                         <p className="mb-6">Videos</p>
                     </div>
                     <div>
-                        <h6 className="mb-6">Support</h6>
+                        <h6 className="mb-6 font-bold">Support</h6>
                         <p className="mb-6">FAQs</p>
                         <p className="mb-6">Privacy Policy</p>
                         <p className="mb-6">About Hernalytics</p>
                         <p className="mb-6">Terms of Service</p>
                     </div>
                     <div>
-                        <h6 className="mb-6">Let’s chat!</h6>
+                        <h6 className="mb-6 font-bold">Let’s chat!</h6>
                         <p className="mb-6">hernalytics@gmail.com</p>
                         <p className="mb-6">Privacy Policy</p>
                         <p className="mb-6">+234 801 234 5678</p>

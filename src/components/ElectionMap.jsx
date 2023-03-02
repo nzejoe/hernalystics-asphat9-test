@@ -7,7 +7,7 @@ const ElectionMap = () => {
         { id: "3", name: "PDP", color: "#D62B3C" },
     ];
     return (
-        <div className="dark-box mt-4 flex justify-between">
+        <div className="dark-box rounded-[13px] mt-4 flex justify-between">
             <div className="home-map">
                 <img src="images/home-map.svg" alt="Home map" />
             </div>
