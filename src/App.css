@@ -1,38 +1,91 @@
-.App {
-  text-align: center;
+:root {
+    --bg-color: #1f2335;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .pro-election .party-color {
+    width: 32px;
+    height: 24px;
+} */
+
+body {
+    background-color: var(--bg-color);
+    color: #ffffff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ul {
+    list-style-type: none;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+    max-width: 1266px;
+    margin-inline: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.justify-between {
+    justify-content: space-between;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+.navbar {
+    margin-block: 42px;
+    align-items: center;
+}
+
+.home-logo {
+    cursor: pointer;
+}
+
+.nav-list {
+    margin-inline: 60px;
+}
+
+.nav-item {
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.navbar_auth {
+    display: flex;
+    align-items: center;
+}
+
+.navbar_auth-signup {
+    margin-inline-start: 38px;
+    padding-inline: 32px;
+    padding-block: 12px;
+    background-color: #e5b805;
+    border-radius: 4px;
+    color: #000;
+    font-weight: 600;
+}
+
+.home__select select {
+    width: 260px;
+    height: 45px;
+    border-radius: 6px;
+    border: 1px solid #252b46;
+    background-color: #1c2031;
+    color: #c6c7cb;
+    padding-inline: 10px;
+}
+
+.home__select select:not(:last-child) {
+    margin-right: 12px;
 }
