@@ -43,11 +43,6 @@ ul {
     flex-grow: 1;
 }
 
-.navbar {
-    margin-block: 42px;
-    align-items: center;
-}
-
 .home-logo {
     cursor: pointer;
 }

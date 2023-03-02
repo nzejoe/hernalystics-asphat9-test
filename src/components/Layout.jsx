@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
     return (
         <div>
             <header className="container">
-                <nav className="navbar flex justify-between">
+                <nav className="navbar flex justify-between items-center py-[42px]">
                     <div className="home-logo">
                         <img src="images/main-log.svg" alt="hernalytics logo" />
                     </div>
@@ -22,37 +22,47 @@ const Layout = ({ children }) => {
                 </nav>
             </header>
             <section className="container">{children}</section>
-            <footer>
-                <div>
-                    <div className="footer-logo"></div>
-                    <p>
-                        Isale Eko Avenue, Dolphin Estate, Ikoyi, Lagos, <br /> Nigeria
-                    </p>
-                    <p>© 2022 Hernalytics</p>
-                </div>
-                <div>
-                    <h6>About</h6>
-                    <p>Our Story</p>
-                    <p>Blog</p>
-                    <p>About Hernalytics</p>
-                    <p>Videos</p>
-                </div>
-                <div>
-                    <h6>Support</h6>
-                    <p>FAQs</p>
-                    <p>Privacy Policy</p>
-                    <p>About Hernalytics</p>
-                    <p>Terms of Service</p>
-                </div>
-                <div>
-                    <h6>Let’s chat!</h6>
-                    <p>hernalytics@gmail.com</p>
-                    <p>Privacy Policy</p>
-                    <p>+234 801 234 5678</p>
+            <footer className="mt-[160px] pt-[80px] pb-[60px]" style={{ backgroundColor: "rgba(255, 255, 255, 0.1)" }}>
+                <div className="container flex justify-between">
                     <div>
-                        <img src="images/instagramm.svg" alt="instagram" />
-                        <img src="images/twitter.svg" alt="twitter" />
-                        <img src="images/watsapp.svg" alt="whatsapp" />
+                        <div className="footer-logo mb-3">
+                            <img src="images/footer-logo.svg" alt="hernalystics logo" />
+                        </div>
+                        <p className="mb-3 font-400">
+                            Isale Eko Avenue, Dolphin Estate, Ikoyi, Lagos, <br /> Nigeria
+                        </p>
+                        <p>© 2022 Hernalytics</p>
+                    </div>
+                    <div>
+                        <h6 className="mb-6">About</h6>
+                        <p className="mb-6">Our Story</p>
+                        <p className="mb-6">Blog</p>
+                        <p className="mb-6">About Hernalytics</p>
+                        <p className="mb-6">Videos</p>
+                    </div>
+                    <div>
+                        <h6 className="mb-6">Support</h6>
+                        <p className="mb-6">FAQs</p>
+                        <p className="mb-6">Privacy Policy</p>
+                        <p className="mb-6">About Hernalytics</p>
+                        <p className="mb-6">Terms of Service</p>
+                    </div>
+                    <div>
+                        <h6 className="mb-6">Let’s chat!</h6>
+                        <p className="mb-6">hernalytics@gmail.com</p>
+                        <p className="mb-6">Privacy Policy</p>
+                        <p className="mb-6">+234 801 234 5678</p>
+                        <div className="flex gap-8">
+                            <button>
+                                <img src="images/instagramm.svg" alt="instagram" />
+                            </button>
+                            <button>
+                                <img src="images/twitter.svg" alt="twitter" />
+                            </button>
+                            <button>
+                                <img src="images/watsapp.svg" alt="whatsapp" />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </footer>
