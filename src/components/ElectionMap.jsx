@@ -24,7 +24,7 @@ const ElectionMap = () => {
                 </div>
                 <div>
                     {parties.map((party) => (
-                        <div key={parties.id} className="flex gap-3 mb-8">
+                        <div key={party.id} className="flex gap-3 mb-8">
                             <div className="w-[32px] h-[24px]" style={{ backgroundColor: party.color }}></div>
                             <span className="text-[#57656B] text-sm">{party.name}</span>
                         </div>

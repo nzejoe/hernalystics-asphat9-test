@@ -29,26 +29,30 @@ const ElectionAnalysis = ({ electEvent, handleSelectEvent }) => {
             </div>
             <ElectionMap />
             <div className="mt-[30px] dark-box px-[30px] py-[45px] rounded-[13px] flex gap-5">
-                <div className="dark-box p-[34px] rounded-[13px]">
+                <div className="dark-box p-[34px]  rounded-[13px]">
                     <div className="flex">
                         <div className="relative">
                             <img src="images/election-donut-chart.svg" alt="election donut chart" />
-                            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[143px] h-[143px] border-[0.25px] border-[#A28888] rounded-full flex flex-col justify-center items-center">
+                            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[143px] h-[143px] border-[0.25px] border-tiny rounded-full flex flex-col justify-center items-center">
                                 <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
                                     TOTAL VOTES
                                 </span>
                                 <span className="block">168,912,222</span>
                             </p>
                         </div>
-                        <p className="mt-8">
-                            <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
-                                REJECTED VOTES
-                            </span>
-                            <span className="block">8,400,000</span>
+                        <p className="mt-8 -ml-5 flex items-start">
+                            <img src="images/rejected-icon.svg" alt="" className="mt-1.5" />
+                            <div>
+                                <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                                    REJECTED VOTES
+                                </span>
+                                <span className="block">8,400,000</span>
+                            </div>
                         </p>
                     </div>
-                    <p className="mt-1.5">
+                    <p className="-mt-5">
                         <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
+                            <img src="images/accepted-icon.svg" alt="" className="ml-10" />
                             ACCEPTED VOTES
                         </span>
                         <span className="block">160,512,222</span>
@@ -76,7 +80,7 @@ const ElectionAnalysis = ({ electEvent, handleSelectEvent }) => {
                     </ul>
                 </div>
 
-                <div className="dark-box pt-[42px] pl-[27px] pr-[72px] rounded=[13px]">
+                <div className="dark-box pt-[42px] pl-[27px] pr-[50px] rounded=[13px]">
                     <div className="mb-[30px]">
                         <p className="text-sm">TOTAL ELECTED MEMBERS</p>
                         <p className="text-xl font-bold">10,000</p>

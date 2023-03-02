@@ -31,3 +31,7 @@ code {
 .dark-box {
     @apply border border-[#252b46] bg-[#1c2031];
 }
+
+.border-tiny {
+    border: 0.25px solid #a28888;
+}
