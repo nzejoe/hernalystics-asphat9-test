@@ -33,14 +33,14 @@ const ElectionAnalysis = ({ electEvent, handleSelectEvent }) => {
                     <div className="flex">
                         <div className="relative">
                             <img src="images/election-donut-chart.svg" alt="election donut chart" />
-                            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[143px] h-[143px] border-[0.25px] border-tiny rounded-full flex flex-col justify-center items-center">
+                            <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[143px] h-[143px] border-tiny rounded-full flex flex-col justify-center items-center">
                                 <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
                                     TOTAL VOTES
                                 </span>
                                 <span className="block">168,912,222</span>
                             </p>
                         </div>
-                        <p className="mt-8 -ml-5 flex items-start">
+                        <div className="mt-8 -ml-5 flex items-start">
                             <img src="images/rejected-icon.svg" alt="" className="mt-1.5" />
                             <div>
                                 <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>
@@ -48,7 +48,7 @@ const ElectionAnalysis = ({ electEvent, handleSelectEvent }) => {
                                 </span>
                                 <span className="block">8,400,000</span>
                             </div>
-                        </p>
+                        </div>
                     </div>
                     <p className="-mt-5">
                         <span className="block text-xs" style={{ color: "rgba(255, 255, 255, 0.5)" }}>

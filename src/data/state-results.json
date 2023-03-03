@@ -1,0 +1,298 @@
+[
+    {
+        "id": 1,
+        "state": "Abia",
+        "APC": "34%",
+        "LP": "53%",
+        "PDP": "13%",
+        "leading": "LP"
+    },
+    {
+        "id": 2,
+        "state": "Adamawa",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "PDP"
+    },
+    {
+        "id": 3,
+        "state": "Akwa Ibom",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 4,
+        "state": "Anambra",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 5,
+        "state": "Bauchi",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 6,
+        "state": "Bayelsa",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 7,
+        "state": "Benue",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 8,
+        "state": "Borno",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 9,
+        "state": "Cross River",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 10,
+        "state": "Delta",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 11,
+        "state": "Eboyi",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 12,
+        "state": "Edo",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 13,
+        "state": "Ekiti",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 14,
+        "state": "Enugu",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 15,
+        "state": "Gombe",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "PDP"
+    },
+    {
+        "id": 16,
+        "state": "Imo",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 17,
+        "state": "Jigawa",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "PDP"
+    },
+    {
+        "id": 18,
+        "state": "Kaduna",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 19,
+        "state": "Kano",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 20,
+        "state": "Katsina",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 21,
+        "state": "Kebbi",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 22,
+        "state": "Kogi",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 23,
+        "state": "Kwara",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 24,
+        "state": "Lagos",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 25,
+        "state": "Nasarawa",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 26,
+        "state": "Niger",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 27,
+        "state": "Ogun",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 28,
+        "state": "Ondo",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 29,
+        "state": "Osun",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 30,
+        "state": "Oyo",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 31,
+        "state": "Plateau",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 32,
+        "state": "Rivers",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "LP"
+    },
+    {
+        "id": 33,
+        "state": "Sokoto",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 34,
+        "state": "Taraba",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "PDP"
+    },
+    {
+        "id": 35,
+        "state": "Yobe",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "PDP"
+    },
+    {
+        "id": 36,
+        "state": "Zamfara",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    },
+    {
+        "id": 37,
+        "state": "Abuja",
+        "APC": "53%",
+        "LP": "53%",
+        "PDP": "53%",
+        "leading": "APC"
+    }
+]

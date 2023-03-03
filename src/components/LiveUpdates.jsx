@@ -1,6 +1,7 @@
 import React from "react";
 import HomeSelect from "./HomeSelect";
 import ElectionMap from "./ElectionMap";
+import StateResults from "./StateResults";
 
 const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
     const presPolls = [
@@ -246,7 +247,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     </div>
                 </div>
             </div>
-            <div className="mt-[130px]">
+            <div className="mt-[130px] mb-[56px]">
                 <div className="flex justify-between mb-[54px]">
                     <h5 className="text-2xl font-medium">Presidential Race</h5>
                     <div className="flex items-center gap-2">
@@ -259,6 +260,10 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     </div>
                 </div>
                 <ElectionMap />
+            </div>
+            <div className="">
+                <h5 className="text-2xl font-medium border-b border-[#3d435e] pb-3 mb-5">State Results</h5>
+                <StateResults />
             </div>
         </div>
     );
