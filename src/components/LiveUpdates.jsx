@@ -205,7 +205,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     <div className="flex-1">
                         <h5 className="text-2xl font-medium mb-6">HOUSE</h5>
                         <div className="flex">
-                            {senPolls.map((poll) => (
+                            {housePolls.map((poll) => (
                                 <div key={poll.id} style={{ width: `${poll.percentage}` }} className="relative">
                                     <div className={` h-[16px]`} style={{ backgroundColor: poll.color }}></div>
                                     <div
