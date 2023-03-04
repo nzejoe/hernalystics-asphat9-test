@@ -96,23 +96,23 @@ const Layout = ({ children }) => {
                     </div>
                     <div>
                         <h6 className="mb-6 font-bold">About</h6>
-                        <p className="mb-6">Our Story</p>
-                        <p className="mb-6">Blog</p>
-                        <p className="mb-6">About Hernalytics</p>
-                        <p className="mb-6">Videos</p>
+                        <p className="mb-6 hover:cursor-pointer">Our Story</p>
+                        <p className="mb-6 hover:cursor-pointer">Blog</p>
+                        <p className="mb-6 hover:cursor-pointer">About Hernalytics</p>
+                        <p className="mb-6 hover:cursor-pointer">Videos</p>
                     </div>
                     <div>
                         <h6 className="mb-6 font-bold">Support</h6>
-                        <p className="mb-6">FAQs</p>
-                        <p className="mb-6">Privacy Policy</p>
-                        <p className="mb-6">About Hernalytics</p>
-                        <p className="mb-6">Terms of Service</p>
+                        <p className="mb-6 hover:cursor-pointer">FAQs</p>
+                        <p className="mb-6 hover:cursor-pointer">Privacy Policy</p>
+                        <p className="mb-6 hover:cursor-pointer">About Hernalytics</p>
+                        <p className="mb-6 hover:cursor-pointer">Terms of Service</p>
                     </div>
                     <div>
                         <h6 className="mb-6 font-bold">Let’s chat!</h6>
-                        <p className="mb-6">hernalytics@gmail.com</p>
-                        <p className="mb-6">Privacy Policy</p>
-                        <p className="mb-6">+234 801 234 5678</p>
+                        <p className="mb-6 hover:cursor-pointer">hernalytics@gmail.com</p>
+                        <p className="mb-6 hover:cursor-pointer">Privacy Policy</p>
+                        <p className="mb-6 hover:cursor-pointer">+234 801 234 5678</p>
                         <div className="flex gap-8">
                             <button>
                                 <img src="images/instagramm.svg" alt="instagram" />
