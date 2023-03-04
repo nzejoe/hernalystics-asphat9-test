@@ -252,7 +252,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     <h5 className="text-2xl font-medium">Presidential Race</h5>
                     <div className="flex items-center gap-2">
                         <h5>Filter By:</h5>
-                        <select name="" id="" className="dark-box px-2 py-1">
+                        <select name="" id="" className="bg-[#1E1E1E] p-3 border rounded-lg">
                             <option value="">Presidential</option>
                             <option value="">Senate</option>
                             <option value="">House of Representative</option>
