@@ -1,9 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import HomeSelect from "./HomeSelect";
 import ElectionMap from "./ElectionMap";
 import StateResults from "./StateResults";
 
 const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
+    const [presidentialData, setPresidentialData] = useState([]);
+
+    const getPercentage = (total, number) => {
+        let percentage = (number / total) * 100;
+        return `${percentage.toFixed(2)}%`;
+    };
+
+    const getAvatar = (party) => {
+        const avatars = {
+            APC: "images/tinubu-avatar.svg",
+            LP: "images/obi-avatar.svg",
+            PDP: "images/atiku-avatar.svg",
+        };
+        return avatars[party];
+    };
+
+    const getColor = (party) => {
+        const colors = {
+            APC: "#64CCFF",
+            LP: "#0AA83F",
+            PDP: "#D62B3C",
+        };
+        return colors[party];
+    };
+
     const presPolls = [
         {
             id: "1",
@@ -99,6 +126,63 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
         },
     ];
 
+    useEffect(() => {
+        // ALL POSSIBLE ENDPOINTS
+        const requests = [
+            axios.get("/elections/candidate-total-votes?type=president"),
+            axios.get("/elections/candidate-total-votes?type=senate"),
+            axios.get("/elections/candidate-total-votes?type=house"),
+            axios.get("/elections/candidate-total-votes?type=state_result"),
+        ];
+
+        axios
+            .all(requests)
+            .then(
+                axios.spread((presRes, senRes, houseRes, stateRes) => {
+                    const presidentialResults = presRes.data;
+                    const senateResults = senRes.data;
+                    const houseResults = houseRes.data;
+                    const stateResults = stateRes.data;
+
+                    // PRESIDENTIAL RESULTS
+                    const totalVotes = presidentialResults.reduce((total, party) => {
+                        return total + party.candidates_vote;
+                    }, 0);
+                    let electionResults = presidentialResults.map((party, idx) => {
+                        const { political_party_name, full_name, candidate_id, candidates_vote } = party;
+
+                        let partyName =
+                            political_party_name === "Labour Party"
+                                ? "LP"
+                                : political_party_name === "People's Democratic Party"
+                                ? "PDP"
+                                : political_party_name === "All Progressives Congress" && "APC";
+                        let avatar = getAvatar(partyName);
+                        let votePercent = getPercentage(totalVotes, candidates_vote);
+                        const color = getColor(partyName);
+                        // console.log("vote percent", votePercent);
+                        return {
+                            id: candidate_id,
+                            partyName,
+                            contestant: full_name,
+                            avatar,
+                            number: candidates_vote,
+                            percentage: votePercent,
+                            color,
+                        };
+                    });
+
+                    setPresidentialData(electionResults);
+
+                    // STATE RESULTS
+                    console.log("election results", stateResults);
+                })
+            )
+            .catch((error) => console.log(error));
+    }, []);
+
+    // console.log(presidentialData);
+
     return (
         <div>
             <div className="flex justify-between">
@@ -123,7 +207,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             {/* PRESIDENTIAL POLLS */}
             <h5 className="text-2xl font-medium mb-6">PRESIDENT</h5>
             <div className="flex">
-                {presPolls.map((poll) => (
+                {presidentialData.map((poll) => (
                     <div key={poll.id} style={{ width: `${poll.percentage}` }} className="relative">
                         <div className={` h-[16px]`} style={{ backgroundColor: poll.color }}></div>
                         <div className={`absolute top-[20px] ${poll.partyName === "PDP" ? "right-2" : "left-2"}`}>
