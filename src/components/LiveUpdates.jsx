@@ -176,6 +176,57 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
 
                     // STATE RESULTS
                     console.log("election results", stateResults);
+
+                    for (const key of Object.keys(stateResults)) {
+                        const state = key;
+                        const results = stateResults[key];
+
+                        const partyList = [
+                            { name: "All Progressives Congress", code: "APC" },
+                            { name: "Labour Party", code: "LP" },
+                            { name: "People's Democratic Party", code: "PDP" },
+                        ];
+
+                        let partyResults = results.map((res) => {
+                            const { candidate_votes, political_party_name } = res;
+
+                            let partResult =
+                                political_party_name === "Labour Party"
+                                    ? { LP: candidate_votes }
+                                    : political_party_name === "People's Democratic Party"
+                                    ? { PDP: candidate_votes }
+                                    : political_party_name === "All Progressive Congress" && { APC: candidate_votes };
+
+                            return partResult;
+                        });
+
+                        // for (let x = 0; partyList.length > x; x++) {
+                        //     let found = false;
+                        //     let name = partyList[x].name;
+                        //     let code = partyList[x].code;
+                        //     let votes = 0;
+
+                        //     for (let y = 0; partyResults.length > y; y++) {
+                        //         if (code === Object.keys(partyResults[y])[0]) {
+                        //             found = true;
+                        //             votes = Object.values(partyResults[y])[0];
+                        //             break;
+                        //         }
+                        //     }
+
+                        //     console.log({ [code]: votes });
+                        // }
+
+                        // const newPartyResults = partyResults.map((res) => {
+                        //     return Object.keys(res)[0];
+                        // });
+
+                        // const parties =
+
+                        console.log(key, " part results", partyResults);
+
+                        console.log(state, results);
+                    }
                 })
             )
             .catch((error) => console.log(error));
