@@ -35,3 +35,14 @@ code {
 .border-tiny {
     border: 0.25px solid #3a3f5c;
 }
+
+.LP {
+    fill: "#0AA83F";
+}
+
+.PDP {
+    fill: "#D62B3C";
+}
+.APC {
+    fill: "#64CCFF";
+}

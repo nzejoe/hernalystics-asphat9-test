@@ -8,6 +8,7 @@ import StateResults from "./StateResults";
 const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
     const [presidentialData, setPresidentialData] = useState([]);
     const [stateCoalatedResults, setStateCoalatedResults] = useState([]);
+    const [mapData, setMapData] = useState({});
 
     const getPercentage = (total, number) => {
         let percentage = (number / total) * 100;
@@ -30,6 +31,36 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             PDP: "#D62B3C",
         };
         return colors[party];
+    };
+
+    const getStateName = (state) => {
+        let stateName;
+
+        switch (state) {
+            case "ABIA":
+                stateName = "ABIA";
+                break;
+            case "ADAMAWA":
+                stateName = "ADAMAWA";
+                break;
+            case "ANAMBRA":
+                stateName = "ANAMBRA";
+                break;
+            case "CROSS RIVER":
+                stateName = "CROSS";
+                break;
+            case "LAGOS":
+                stateName = "LAGOS";
+                break;
+            case "RIVERS":
+                stateName = "RIVERS";
+                break;
+            default:
+                stateName = state;
+                break;
+        }
+
+        return stateName;
     };
 
     const presPolls = [
@@ -134,16 +165,18 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             axios.get("/elections/candidate-total-votes?type=senate"),
             axios.get("/elections/candidate-total-votes?type=house"),
             axios.get("/elections/candidate-total-votes?type=state_result"),
+            axios.get("/elections/candidate-total-votes?type=map"),
         ];
 
         axios
             .all(requests)
             .then(
-                axios.spread((presRes, senRes, houseRes, stateRes) => {
+                axios.spread((presRes, senRes, houseRes, stateRes, mapRes) => {
                     const presidentialResults = presRes.data;
                     const senateResults = senRes.data;
                     const houseResults = houseRes.data;
                     const stateResultsData = stateRes.data;
+                    const mapResultsData = mapRes.data;
 
                     // PRESIDENTIAL RESULTS
                     const totalVotes = presidentialResults.reduce((total, party) => {
@@ -221,8 +254,25 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
 
                         // console.log(key, " part results", partyResultsSorted);
                     }
-                    console.log("results", presidentialResults);
                     setStateCoalatedResults(stateResults);
+
+                    //*******  Map Data ***********//
+                    mapResultsData.forEach((result) => {
+                        const { political_party_name, name } = result;
+
+                        let stateName = getStateName(name);
+
+                        let partyName =
+                            political_party_name === "Labour Party"
+                                ? "#0AA83F"
+                                : political_party_name === "People's Democratic Party"
+                                ? "#D62B3C"
+                                : political_party_name === "All Progressive Congress" && "#64CCFF";
+
+                        setMapData((prev) => ({ ...prev, [stateName]: partyName }));
+                    });
+
+                    // console.log("results", mapData);
                 })
             )
             .catch((error) => console.log(error));
@@ -406,7 +456,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                         </select>
                     </div>
                 </div>
-                <ElectionMap />
+                <ElectionMap mapData={mapData} />
             </div>
             <div className="">
                 <h5 className="text-2xl font-medium border-b border-[#3d435e] pb-3 mb-5">State Results</h5>

@@ -1,6 +1,7 @@
 import React from "react";
+import Map from "./Map";
 
-const ElectionMap = () => {
+const ElectionMap = ({ mapData }) => {
     const parties = [
         { id: "1", name: "APC", color: "#64CCFF" },
         { id: "2", name: "LP", color: "#0AA83F" },
@@ -9,7 +10,7 @@ const ElectionMap = () => {
     return (
         <div className="dark-box rounded-[13px] mt-4 flex justify-between">
             <div className="home-map">
-                <img src="images/home-map.svg" alt="Home map" />
+                <Map mapData={mapData} />
             </div>
             <div className="py-[56px] pr-[60px] w-[153px] flex flex-col justify-between">
                 <div className="self-end">
