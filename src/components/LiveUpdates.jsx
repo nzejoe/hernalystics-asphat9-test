@@ -176,8 +176,6 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             .then(
                 axios.spread((presRes, senRes, houseRes, stateRes, mapRes) => {
                     const presidentialResults = presRes.data;
-                    const senateResults = senRes.data;
-                    const houseResults = houseRes.data;
                     const stateResultsData = stateRes.data;
                     const mapResultsData = mapRes.data;
 
