@@ -7,10 +7,11 @@ import StateResults from "./StateResults";
 
 const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
     const [presidentialData, setPresidentialData] = useState([]);
+    const [stateCoalatedResults, setStateCoalatedResults] = useState([]);
 
     const getPercentage = (total, number) => {
         let percentage = (number / total) * 100;
-        return `${percentage.toFixed(2)}%`;
+        return `${Number.isInteger(percentage) ? percentage : percentage.toFixed(2)}%`;
     };
 
     const getAvatar = (party) => {
@@ -142,7 +143,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     const presidentialResults = presRes.data;
                     const senateResults = senRes.data;
                     const houseResults = houseRes.data;
-                    const stateResults = stateRes.data;
+                    const stateResultsData = stateRes.data;
 
                     // PRESIDENTIAL RESULTS
                     const totalVotes = presidentialResults.reduce((total, party) => {
@@ -174,59 +175,53 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
 
                     setPresidentialData(electionResults);
 
-                    // STATE RESULTS
-                    console.log("election results", stateResults);
+                    //******* STATE RESULTS ***********//
+                    let stateResults = [];
 
-                    for (const key of Object.keys(stateResults)) {
+                    for (const key of Object.keys(stateResultsData)) {
                         const state = key;
-                        const results = stateResults[key];
+                        const results = stateResultsData[key];
 
-                        const partyList = [
-                            { name: "All Progressives Congress", code: "APC" },
-                            { name: "Labour Party", code: "LP" },
-                            { name: "People's Democratic Party", code: "PDP" },
-                        ];
+                        const stateTotalCount = results.reduce((total, party) => {
+                            return total + party.candidate_votes;
+                        }, 0);
 
                         let partyResults = results.map((res) => {
                             const { candidate_votes, political_party_name } = res;
 
                             let partResult =
-                                political_party_name === "Labour Party"
-                                    ? { LP: candidate_votes }
-                                    : political_party_name === "People's Democratic Party"
-                                    ? { PDP: candidate_votes }
-                                    : political_party_name === "All Progressive Congress" && { APC: candidate_votes };
+                                political_party_name === "All Progressive Congress"
+                                    ? {
+                                          APC: getPercentage(stateTotalCount, candidate_votes),
+                                          count: candidate_votes,
+                                          code: "APC",
+                                      }
+                                    : political_party_name === "Labour Party"
+                                    ? {
+                                          LP: getPercentage(stateTotalCount, candidate_votes),
+                                          count: candidate_votes,
+                                          code: "LP",
+                                      }
+                                    : political_party_name === "People's Democratic Party" && {
+                                          PDP: getPercentage(stateTotalCount, candidate_votes),
+                                          count: candidate_votes,
+                                          code: "PDP",
+                                      };
 
                             return partResult;
                         });
 
-                        // for (let x = 0; partyList.length > x; x++) {
-                        //     let found = false;
-                        //     let name = partyList[x].name;
-                        //     let code = partyList[x].code;
-                        //     let votes = 0;
+                        let leading = partyResults.sort((a, b) => b.count - a.count);
+                        leading = Object.keys(leading[0])[0];
 
-                        //     for (let y = 0; partyResults.length > y; y++) {
-                        //         if (code === Object.keys(partyResults[y])[0]) {
-                        //             found = true;
-                        //             votes = Object.values(partyResults[y])[0];
-                        //             break;
-                        //         }
-                        //     }
+                        const partyResultsSorted = partyResults.sort((a, b) => a.code.localeCompare(b.code));
 
-                        //     console.log({ [code]: votes });
-                        // }
+                        stateResults.push({ id: state, state, ...partyResults, leading });
 
-                        // const newPartyResults = partyResults.map((res) => {
-                        //     return Object.keys(res)[0];
-                        // });
-
-                        // const parties =
-
-                        console.log(key, " part results", partyResults);
-
-                        console.log(state, results);
+                        console.log(key, " part results", partyResultsSorted);
                     }
+                    // console.log("results", stateResults);
+                    setStateCoalatedResults(stateResults);
                 })
             )
             .catch((error) => console.log(error));
@@ -398,7 +393,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             </div>
             <div className="">
                 <h5 className="text-2xl font-medium border-b border-[#3d435e] pb-3 mb-5">State Results</h5>
-                <StateResults />
+                <StateResults stateResults={stateCoalatedResults} />
             </div>
         </div>
     );
