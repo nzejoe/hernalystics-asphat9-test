@@ -149,6 +149,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                     const totalVotes = presidentialResults.reduce((total, party) => {
                         return total + party.candidates_vote;
                     }, 0);
+
                     let electionResults = presidentialResults.map((party, idx) => {
                         const { political_party_name, full_name, candidate_id, candidates_vote } = party;
 
@@ -157,7 +158,7 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
                                 ? "LP"
                                 : political_party_name === "People's Democratic Party"
                                 ? "PDP"
-                                : political_party_name === "All Progressives Congress" && "APC";
+                                : political_party_name === "All Progressive Congress" && "APC";
                         let avatar = getAvatar(partyName);
                         let votePercent = getPercentage(totalVotes, candidates_vote);
                         const color = getColor(partyName);
@@ -216,11 +217,11 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
 
                         const partyResultsSorted = partyResults.sort((a, b) => a.code.localeCompare(b.code));
 
-                        stateResults.push({ id: state, state, ...partyResults, leading });
+                        stateResults.push({ id: state, state, ...partyResultsSorted, leading });
 
-                        console.log(key, " part results", partyResultsSorted);
+                        // console.log(key, " part results", partyResultsSorted);
                     }
-                    // console.log("results", stateResults);
+                    console.log("results", presidentialResults);
                     setStateCoalatedResults(stateResults);
                 })
             )
@@ -253,37 +254,53 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
             {/* PRESIDENTIAL POLLS */}
             <h5 className="text-2xl font-medium mb-6">PRESIDENT</h5>
             <div className="flex">
-                {presidentialData.map((poll) => (
-                    <div key={poll.id} style={{ width: `${poll.percentage}` }} className="relative">
-                        <div className={` h-[16px]`} style={{ backgroundColor: poll.color }}></div>
-                        <div className={`absolute top-[20px] ${poll.partyName === "PDP" ? "right-2" : "left-2"}`}>
-                            <div className={`relative`}>
-                                <img
-                                    src="images/point-up-icon.svg"
-                                    alt=""
-                                    className={`absolute top-0 ${poll.partyName === "PDP" ? "right-3" : "left-4"}`}
-                                />
-                            </div>
+                {presidentialData
+                    .sort((a, b) => a.partyName.localeCompare(b.partyName))
+                    .map((poll) => (
+                        <div key={poll.id} style={{ width: `${poll.percentage}` }} className="relative">
+                            <div className={` h-[16px]`} style={{ backgroundColor: poll.color }}></div>
                             <div
-                                className={`flex bg-white p-2 gap-2 min-w-[200px] mt-2 ${
-                                    poll.partyName === "PDP" ? "right-2" : "left-2"
+                                className={`absolute top-[20px] ${
+                                    poll.partyName === "PDP"
+                                        ? "right-2"
+                                        : poll.partyName === "LP"
+                                        ? "left-1/2"
+                                        : "left-0"
                                 }`}
                             >
-                                <div>
-                                    <img src={`${poll.avatar}`} alt="" />
+                                <div className={`relative`}>
+                                    <img
+                                        src="images/point-up-icon.svg"
+                                        alt=""
+                                        className={`absolute top-0 ${
+                                            poll.partyName === "PDP"
+                                                ? "right-3"
+                                                : poll.partyName === "LP"
+                                                ? "left-1/2"
+                                                : "left-0"
+                                        }`}
+                                    />
                                 </div>
-                                <div>
-                                    <p style={{ color: poll.color }} className="text-sm font-medium">
-                                        <span>{poll.contestant}</span>,<span>{poll.partyName}</span>
-                                    </p>
-                                    <p className="text-[#585858] text-sm">
-                                        {poll.number} votes <span>{poll.percentage}</span>
-                                    </p>
+                                <div
+                                    className={`flex bg-white p-2 gap-2 min-w-[200px] mt-2 ${
+                                        poll.partyName === "PDP" ? "right-2" : "left-2"
+                                    }`}
+                                >
+                                    <div>
+                                        <img src={`${poll.avatar}`} alt="" />
+                                    </div>
+                                    <div>
+                                        <p style={{ color: poll.color }} className="text-sm font-medium">
+                                            <span>{poll.contestant}</span>,<span>{poll.partyName}</span>
+                                        </p>
+                                        <p className="text-[#585858] text-sm">
+                                            {poll.number} votes <span>{poll.percentage}</span>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
             </div>
 
             {/* SENATE POLLS */}
