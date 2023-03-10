@@ -1,5 +1,5 @@
 import React from "react";
-import Results from "../data/state-results.json";
+// import Results from "../data/state-results.json";
 
 const StateResults = ({ stateResults }) => {
     const colors = {

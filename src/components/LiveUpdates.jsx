@@ -65,100 +65,100 @@ const LiveUpdates = ({ electEvent, handleSelectEvent }) => {
         return stateName;
     };
 
-    const presPolls = [
-        {
-            id: "1",
-            partyName: "APC",
-            contestant: "Tinubu",
-            avatar: "images/tinubu-avatar.svg",
-            number: "81,283,786",
-            percentage: "51.3%",
-            color: "#64CCFF",
-        },
-        {
-            id: "2",
-            partyName: "LP",
-            contestant: "Peter",
-            avatar: "images/obi-avatar.svg",
-            number: "60,283,786",
-            percentage: "42%",
-            color: "#0AA83F",
-        },
-        {
-            id: "3",
-            partyName: "PDP",
-            contestant: "Atiku",
-            avatar: "images/atiku-avatar.svg",
-            number: "283,786",
-            percentage: "7.3%",
-            color: "#D62B3C",
-        },
-    ];
+    // const presPolls = [
+    //     {
+    //         id: "1",
+    //         partyName: "APC",
+    //         contestant: "Tinubu",
+    //         avatar: "images/tinubu-avatar.svg",
+    //         number: "81,283,786",
+    //         percentage: "51.3%",
+    //         color: "#64CCFF",
+    //     },
+    //     {
+    //         id: "2",
+    //         partyName: "LP",
+    //         contestant: "Peter",
+    //         avatar: "images/obi-avatar.svg",
+    //         number: "60,283,786",
+    //         percentage: "42%",
+    //         color: "#0AA83F",
+    //     },
+    //     {
+    //         id: "3",
+    //         partyName: "PDP",
+    //         contestant: "Atiku",
+    //         avatar: "images/atiku-avatar.svg",
+    //         number: "283,786",
+    //         percentage: "7.3%",
+    //         color: "#D62B3C",
+    //     },
+    // ];
 
-    const senPolls = [
-        {
-            id: "1",
-            partyName1: "All Progressive",
-            partyName2: "Congress",
-            partyCode: "APC",
-            avatar: "images/apc-logo.svg",
-            seats: "54",
-            percentage: "51.3%",
-            color: "#64CCFF",
-        },
-        {
-            id: "2",
-            partyName1: "The",
-            partyName2: "Labor Party",
-            partyCode: "LP",
-            avatar: "images/lp-logo.svg",
-            seats: "12",
-            percentage: "16.3%",
-            color: "#0AA83F",
-        },
-        {
-            id: "3",
-            partyName1: "People",
-            partyName2: "Democratic Party",
-            partyCode: "PDP",
-            avatar: "images/pdp-logo.svg",
-            seats: "36",
-            percentage: "46%",
-            color: "#D62B3C",
-        },
-    ];
-    const housePolls = [
-        {
-            id: "1",
-            partyName1: "All Progressive",
-            partyName2: "Congress",
-            partyCode: "APC",
-            avatar: "images/apc-logo.svg",
-            seats: "54",
-            percentage: "51.3%",
-            color: "#64CCFF",
-        },
-        {
-            id: "2",
-            partyName1: "The",
-            partyName2: "Labor Party",
-            partyCode: "LP",
-            avatar: "images/lp-logo.svg",
-            seats: "12",
-            percentage: "16.3%",
-            color: "#0AA83F",
-        },
-        {
-            id: "3",
-            partyName1: "People",
-            partyName2: "Democratic Party",
-            partyCode: "PDP",
-            avatar: "images/pdp-logo.svg",
-            seats: "36",
-            percentage: "46%",
-            color: "#D62B3C",
-        },
-    ];
+    // const senPolls = [
+    //     {
+    //         id: "1",
+    //         partyName1: "All Progressive",
+    //         partyName2: "Congress",
+    //         partyCode: "APC",
+    //         avatar: "images/apc-logo.svg",
+    //         seats: "54",
+    //         percentage: "51.3%",
+    //         color: "#64CCFF",
+    //     },
+    //     {
+    //         id: "2",
+    //         partyName1: "The",
+    //         partyName2: "Labor Party",
+    //         partyCode: "LP",
+    //         avatar: "images/lp-logo.svg",
+    //         seats: "12",
+    //         percentage: "16.3%",
+    //         color: "#0AA83F",
+    //     },
+    //     {
+    //         id: "3",
+    //         partyName1: "People",
+    //         partyName2: "Democratic Party",
+    //         partyCode: "PDP",
+    //         avatar: "images/pdp-logo.svg",
+    //         seats: "36",
+    //         percentage: "46%",
+    //         color: "#D62B3C",
+    //     },
+    // ];
+    // const housePolls = [
+    //     {
+    //         id: "1",
+    //         partyName1: "All Progressive",
+    //         partyName2: "Congress",
+    //         partyCode: "APC",
+    //         avatar: "images/apc-logo.svg",
+    //         seats: "54",
+    //         percentage: "51.3%",
+    //         color: "#64CCFF",
+    //     },
+    //     {
+    //         id: "2",
+    //         partyName1: "The",
+    //         partyName2: "Labor Party",
+    //         partyCode: "LP",
+    //         avatar: "images/lp-logo.svg",
+    //         seats: "12",
+    //         percentage: "16.3%",
+    //         color: "#0AA83F",
+    //     },
+    //     {
+    //         id: "3",
+    //         partyName1: "People",
+    //         partyName2: "Democratic Party",
+    //         partyCode: "PDP",
+    //         avatar: "images/pdp-logo.svg",
+    //         seats: "36",
+    //         percentage: "46%",
+    //         color: "#D62B3C",
+    //     },
+    // ];
 
     useEffect(() => {
         setIsLoading(true);
